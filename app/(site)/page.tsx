@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import styles from './page.module.css';
 import { Metadata } from 'next';
+import { Menu } from './components/menu';
 
 // export const metadata: Metadata = {
 //   title: 'Исправленные данные',
@@ -14,10 +14,11 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className={styles.main}>
-      Main page
+      Главная страница
+      <Menu />
     </main>
   );
 }
