@@ -1,13 +1,21 @@
-import { Metadata } from "next";
+import { getPage } from '@/api/page';
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
-  title: 'Страница'
-}
+  title: 'Страница',
+};
 
-export default function PageProducs({ params }: {params: {alias: string}}) {
-  return (
-    <div>
-      Страница с alias {params.alias}
-    </div>
-  )
+export default async function PageProducs({
+  params,
+}: {
+  params: { alias: string };
+}) {
+  const page = await getPage(params.alias);
+
+  if (!page) {
+    notFound();
+  }
+
+  return <div>{page.title}</div>;
 }
