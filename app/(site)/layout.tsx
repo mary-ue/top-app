@@ -25,6 +25,7 @@ export default function RootLayout({
             <li>First</li>
             <li>Second</li>
             <li><Link href={'/about'}>Third</Link></li>
+            <li><Link href={'/products/typescript'}>Typescript</Link></li>
           </ul>
         </nav>
         {children}
