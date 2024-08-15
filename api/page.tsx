@@ -5,7 +5,7 @@ export async function getPage(alias: string): Promise<TopPageModel | null> {
   await new Promise((res) =>
     setTimeout(() => {
       res('');
-    }, 3000)
+    }, 1000)
   );
 
   const res = await fetch(API.topPage.byAlias + alias, {
