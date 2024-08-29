@@ -3,6 +3,7 @@ import { Inter, Open_Sans } from 'next/font/google';
 import './globals.css';
 import styles from './page.module.css';
 import Link from 'next/link';
+import Script from 'next/script';
 
 const inter = Open_Sans({ subsets: ['latin'] });
 
@@ -18,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <Script src="" strategy="afterInteractive" />
+      </head>
       <body className={inter.className}>
         <nav className={styles.nav}>
           <ul>
